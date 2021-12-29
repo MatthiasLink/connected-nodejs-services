@@ -1,0 +1,11 @@
+services:
+  service-a:
+    build: ./serviceA
+    ports:
+      - "100:8080"
+    links:
+      - service-b
+  service-b:
+    build: ./serviceB
+    ports:
+      - "80:8080"
