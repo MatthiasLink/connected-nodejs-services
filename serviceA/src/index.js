@@ -9,4 +9,4 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Service a is listening on port ${PORT}`)
-})
+});
