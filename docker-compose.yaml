@@ -13,4 +13,4 @@ services:
   service-b:
     build: ./serviceB
     ports:
-      - "80:8080"
+      - "80:8081"
