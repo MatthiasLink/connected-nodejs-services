@@ -5,6 +5,9 @@ services:
       - "100:8080"
     links:
       - service-b
+    environment:
+      - SERVICE_B_SERVICE_SERVICE_HOST=service-b
+      - SERVICE_B_SERVICE_SERVICE_PORT=8080
     # volumes:
     #   - ./serviceA/src:/usr/src/app/src
   service-b:
