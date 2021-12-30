@@ -5,8 +5,8 @@ services:
       - "100:8080"
     links:
       - service-b
-    volumes:
-      - ./serviceA/src:/usr/src/app/src
+    # volumes:
+    #   - ./serviceA/src:/usr/src/app/src
   service-b:
     build: ./serviceB
     ports:
