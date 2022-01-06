@@ -46,10 +46,18 @@ Both services will have two pods (instances) and a loadbalancer to coordinate th
 - [docker](https://docs.docker.com/get-docker/) installed and running
 - [minikube](https://minikube.sigs.k8s.io/docs/start/) installed and running `minikube start`
 
+Alt 1:
 ```bash
-docker compose build
-minikube image load simple_service-a # only necessary if docker and minikube are not connected
-minikube image load simple_service-b # only necessary if docker and minikube are not connected
+docker compose -p simple build
+minikube image load simple_service-a # load docker image into minikube
+minikube image load simple_service-b # load docker image into minikube
+minikube tunnel # necessary to use the loadbalancer feature of kubernetes
+```
+
+Alt 2:
+```bash
+(minikube docker-env) # connect docker to use minikube instance
+docker compose -p simple build
 kubectl create -f kubernetes.yml
 minikube tunnel # necessary to use the loadbalancer feature of kubernetes
 ```
