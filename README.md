@@ -56,7 +56,7 @@ minikube tunnel # necessary to use the loadbalancer feature of kubernetes
 
 Alt 2:
 ```bash
-(minikube docker-env) # connect docker to use minikube instance
+eval $(minikube -p minikube docker-env) # connect docker to use minikube instance
 docker compose -p simple build
 kubectl create -f kubernetes.yml
 minikube tunnel # necessary to use the loadbalancer feature of kubernetes
